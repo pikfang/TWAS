@@ -1,5 +1,5 @@
 # testing
-```
+```bash
 ##MetaXcan analysis##
 
 module load python/3.6.1
@@ -37,7 +37,9 @@ module load python/3.6.1
 --verbosity 7 \
 --throw \
 --output results/smultixcan_allEC.csv
+```
 
+```R
 ##Coloc analysis##
 module load R/4.0.2
 
@@ -54,8 +56,9 @@ for(gene in unique(eqtl$gene)){
 		    dataset2=list(beta=data$beta.eqtl, varbeta=data$se.eqtl*data$se.eqtl, N=${sample size}, type = "quant"), 
 		    MAF = data$maf)
 }
+```
 
-
+```bash
 ##JTI analysis##
 
 #Tissue transcriptome model and covariance was obtained from https://zenodo.org/record/3842289#.YLxPffkzaCo
