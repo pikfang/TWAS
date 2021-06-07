@@ -2,11 +2,12 @@
 
 
 # MetaXcan analysis
+Tissue transcriptome model and covariance was obtained from https://github.com/hakyimlab/MetaXcan 
+We performed PrediXcan analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
+
 ```bash
 module load python/3.6.1
 
-#Tissue transcriptome model and covariance was obtained from https://github.com/hakyimlab/MetaXcan 
-#We performed PrediXcan analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
 $ ./SPrediXcan.py \
 --model_db_path ${path to tissue transcriptome model} \
 --covariance ${path to file containing the covariance matrices for the SNP dosage and transcriptome} \
@@ -64,9 +65,10 @@ for(gene in unique(eqtl$gene)){
 
 
 # JTI analysis
+Tissue transcriptome model and covariance was obtained from https://zenodo.org/record/3842289#.YLxPffkzaCo
+We performed JTI analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
+
 ```bash
-#Tissue transcriptome model and covariance was obtained from https://zenodo.org/record/3842289#.YLxPffkzaCo
-#We performed JTI analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
 
 module load python/3.6.1
 
