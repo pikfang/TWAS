@@ -1,4 +1,5 @@
-# testing
+# TWAS
+
 ```bash
 ##MetaXcan analysis##
 
