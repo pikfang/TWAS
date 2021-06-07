@@ -1,4 +1,5 @@
 # testing
+```
 ##MetaXcan analysis##
 
 module load python/3.6.1
@@ -74,3 +75,4 @@ $ ./SPrediXcan.py \
 --pvalue_column P \
 --output_file results/JTI_allEC_${tissue}.csv
 --throw 
+```
