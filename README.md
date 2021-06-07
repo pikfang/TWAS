@@ -1,7 +1,7 @@
 # TWAS
 
 ```bash
-##MetaXcan analysis##
+# MetaXcan analysis
 
 module load python/3.6.1
 
@@ -20,7 +20,7 @@ $ ./SPrediXcan.py \
 --output_file results/spredixcan_allEC_${tissue}.csv
 --throw 
 
-##MultiXcan analysis##
+# MultiXcan analysis
 
 module load python/3.6.1
 
@@ -41,7 +41,7 @@ module load python/3.6.1
 ```
 
 ```R
-##Coloc analysis##
+# Coloc analysis
 module load R/4.0.2
 
 library(coloc)
@@ -60,7 +60,7 @@ for(gene in unique(eqtl$gene)){
 ```
 
 ```bash
-##JTI analysis##
+# JTI analysis
 
 #Tissue transcriptome model and covariance was obtained from https://zenodo.org/record/3842289#.YLxPffkzaCo
 #We performed JTI analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
