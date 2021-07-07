@@ -85,3 +85,11 @@ $ ./SPrediXcan.py \
 --output_file results/JTI_allEC_${tissue}.csv
 --throw 
 ```
+
+# MR-JTI analysis
+```bash
+
+module load plink/1.90b6.8
+
+plink \
+--bfile 1000G
