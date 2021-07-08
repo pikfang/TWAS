@@ -117,6 +117,6 @@ module load R/3.4.1
 Rscript MR-JTI.r \
 --df_path ${dataframe of GWAS and eQTL summary statistics} \ #headers are rsid, effect_allele_gwas, ldscore, eqtl_beta, eqtl_se, eqtl_p, gwas_beta, gwas_se, gwas_p
 --n_genes ${total number of genes tested in each tissue} \
---out_path results_${gene} \
+--out_path results_${gene}.csv \
 
 ```
