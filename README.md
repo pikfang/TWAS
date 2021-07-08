@@ -92,4 +92,11 @@ $ ./SPrediXcan.py \
 module load plink/1.90b6.8
 
 plink \
---bfile 1000G
+--bfile 1000G_EUR_Phase3_plink/1000G.EUR.QC \
+--clump ${eQTL summary statistics of JTI-identified gene} \ #headers are SNP,CHR,bp,A1,A2,beta,se,P
+--clump-r2 0.01 \
+--out ${clumped eQTLs} \
+--clump-p1 1 \
+--thread-num 1
+
+```bash
