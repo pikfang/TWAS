@@ -1,11 +1,9 @@
 # TWAS
 Multi-tissue TWAS analysis was performed using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
 All computer code used in this study are published and freely available in the referenced articles and their URLS are:
-S-PrediXcan https://github.com/hakyimlab/MetaXcan
-S-MultiXcan https://github.com/hakyimlab/MetaXcan
-COLOC https://cran.r-project.org/web/packages/coloc/index.html
-JTI https://github.com/gamazonlab/MR-JTI
-MR-JTI https://github.com/gamazonlab/MR-JTI
+S-PrediXcan and S-MultiXcan https://github.com/hakyimlab/MetaXcan, 
+COLOC https://cran.r-project.org/web/packages/coloc/index.html, 
+JTI and MR-JTI https://github.com/gamazonlab/MR-JTI.
 
 # S-PrediXcan analysis
 We performed S-PrediXcan analysis using endometrial cancer GWAS summary statistics, tissue transcriptome model and covariance. 
