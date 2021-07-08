@@ -22,7 +22,7 @@ $ ./SPrediXcan.py \
 --non_effect_allele_column OA \
 --beta_column BETA \
 --pvalue_column P \
---output_file results/spredixcan_allEC_${tissue}.csv
+--output_file results/spredixcan_allEC_${tissue}.csv \
 --throw 
 ```
 
@@ -88,7 +88,7 @@ $ ./SPrediXcan.py \
 --non_effect_allele_column OA \
 --beta_column BETA \
 --pvalue_column P \
---output_file results/JTI_allEC_${tissue}.csv
+--output_file results/JTI_allEC_${tissue}.csv \
 --throw 
 ```
 
@@ -117,6 +117,6 @@ module load R/3.4.1
 Rscript MR-JTI.r \
 --df_path ${dataframe of GWAS and eQTL summary statistics} \ #headers are rsid, effect_allele_gwas, ldscore, eqtl_beta, eqtl_se, eqtl_p, gwas_beta, gwas_se, gwas_p
 --n_genes ${total number of genes tested in each tissue} \
---out_path ${tissue}_${gene}_results.csv
+--out_path MR-JTI_${gene}_results.csv
 
 ```
