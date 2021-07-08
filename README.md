@@ -1,9 +1,15 @@
 # TWAS
+Multi-tissue TWAS analysis was performed using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
+All computer code used in this study are published and freely available in the referenced articles and their URLS are:
+S-PrediXcan https://github.com/hakyimlab/MetaXcan
+S-MultiXcan https://github.com/hakyimlab/MetaXcan
+COLOC https://cran.r-project.org/web/packages/coloc/index.html
+JTI https://github.com/gamazonlab/MR-JTI
+MR-JTI https://github.com/gamazonlab/MR-JTI
 
-
-# MetaXcan analysis
-Tissue transcriptome model and covariance was obtained from https://github.com/hakyimlab/MetaXcan 
-We performed PrediXcan analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
+# S-PrediXcan analysis
+We performed S-PrediXcan analysis using endometrial cancer GWAS summary statistics, tissue transcriptome model and covariance. 
+Tissue transcriptome model and covariance was obtained from https://github.com/hakyimlab/MetaXcan. 
 
 ```bash
 module load python/3.6.1
@@ -22,7 +28,8 @@ $ ./SPrediXcan.py \
 --throw 
 ```
 
-# MultiXcan analysis
+# S-MultiXcan analysis
+We performed S-MultiXcan analysis using S-PrediXcan results from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
 
 ```bash
 module load python/3.6.1
@@ -43,8 +50,9 @@ module load python/3.6.1
 --output results/smultixcan_allEC.csv
 ```
 
-
 # Coloc analysis
+For MultiXcan-identified genes, we performed COLOC analysis using their cis-eQTL summary statistics from GTEx v8 (https://gtexportal.org/home/) and their association estimates on endometrial cancer GWAS.
+
 ```R
 module load R/4.0.2
 
@@ -64,9 +72,9 @@ for(gene in unique(eqtl$gene)){
 ```
 
 
-# JTI analysis
-Tissue transcriptome model and covariance was obtained from https://zenodo.org/record/3842289#.YLxPffkzaCo
-We performed JTI analysis using transcriptome prediction models from adipose subcutaneous, adipose visceral omentum, ovary, uterus, vagina and whole blood.
+# JTI analysis 
+We performed JTI analysis using endometrial cancer GWAS, tissue transcriptome model and covariance.
+Tissue transcriptome model and covariance were obtained from https://zenodo.org/record/3842289#.YLxPffkzaCo.
 
 ```bash
 
@@ -87,6 +95,10 @@ $ ./SPrediXcan.py \
 ```
 
 # MR-JTI analysis
+For JTI-identified genes, we performed MR-JTI analysis using their cis-eQTL summary statistics from GTEx v8 (https://gtexportal.org/home/) and their association estimates on endometrial cancer GWAS. (https://gtexportal.org/home/).
+All cis-eQTLs for each gene were clumped using Plink (https://www.cog-genomics.org/plink/), before running MR-JTI analysis. 
+
+
 ```bash
 
 module load plink/1.90b6.8
@@ -99,4 +111,14 @@ plink \
 --clump-p1 1 \
 --thread-num 1
 
-```bash
+```
+
+```R
+module load R/3.4.1
+
+Rscript MR-JTI.r \
+--df_path ${dataframe of GWAS and eQTL summary statistics} \ #headers are rsid, effect_allele_gwas, ldscore, eqtl_beta, eqtl_se, eqtl_p, gwas_beta, gwas_se, gwas_p
+--n_genes ${total number of genes tested in each tissue} \
+--out_path ${tissue}_${gene}_results.csv
+
+```
