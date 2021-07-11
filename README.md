@@ -56,8 +56,8 @@ module load R/4.0.2
 
 library(coloc)
 args <- commandArgs(TRUE)
-gwas <- read.table(args[1], header = T) #headers are snp,a1,a2,beta.gwas,se.gwas,p.gwas
-eqtl <- read.table(args[2], header = T) #headers are gene,snp,a1,a2,beta.eqtl,se.eqtl,p.eqtl
+gwas <- read.table(allEC.tsv, header = T) #headers are snp,a1,a2,maf,beta.gwas,se.gwas,p.gwas
+eqtl <- read.table(eQTL.tsv, header = T) #headers are gene,snp,a1,a2,beta.eqtl,se.eqtl,p.eqtl
 for(gene in unique(eqtl$gene)){
         print(gene)
         temp <- eqtl[eqtl$gene==gene,]
